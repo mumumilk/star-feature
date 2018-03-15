@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button matTooltip="close" (click)="close()">
+                <mat-icon>close</mat-icon>
+        </button> &nbsp; {{planet.name}}
+</mat-toolbar>
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate" color="accent"></mat-progress-bar>
+
+<br>
+
+<div style="padding: 0 7% 7% 7%">
+    <mat-form-field>
+        <mat-icon matSuffix>group</mat-icon>
+        <input readonly type="tel" matInput placeholder="Population" [value]="planet.population">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-icon matSuffix>swap_horiz</mat-icon>
+        <input readonly type="tel" matInput placeholder="Diameter" [value]="planet.diameter">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-icon matSuffix>filter_drama</mat-icon>
+        <input readonly type="tel" matInput placeholder="Climate" [value]="planet.climate">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-icon matSuffix>file_download</mat-icon>
+        <input readonly type="tel" matInput placeholder="Gravity" [value]="planet.gravity">
+    </mat-form-field>
+    <br>
+
+    <films-list-links [filmsURL]="planet.films"></films-list-links>
+</div>

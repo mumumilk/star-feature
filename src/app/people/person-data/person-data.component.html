@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button matTooltip="close" (click)="close()">
+                <mat-icon>close</mat-icon>
+        </button> &nbsp; {{person.name}}
+</mat-toolbar>
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate" color="accent"></mat-progress-bar>
+
+<br>
+<div style="padding: 0 7% 7% 7%">
+    <mat-form-field>
+        <mat-icon matSuffix>vertical_align_top</mat-icon>
+        <input readonly type="tel" matInput placeholder="Height" [value]="person.height + 'cm'">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-icon matSuffix>accessibility</mat-icon>
+        <input readonly type="tel" matInput placeholder="Gender" [value]="person.gender">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-icon matSuffix>today</mat-icon>
+        <input readonly type="tel" matInput placeholder="Birthyear" [value]="person.birth_year">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-icon matSuffix>face</mat-icon>
+        <input readonly type="tel" matInput placeholder="Hair color" [value]="person.hair_color">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-icon matSuffix>pan_tool</mat-icon>
+        <input readonly type="tel" matInput placeholder="Skin color" [value]="person.skin_color">
+    </mat-form-field>
+    <br>
+    <films-list-links [filmsURL]="person.films"></films-list-links>
+    <br>
+    <button mat-raised-button style="width: 100%" color="primary">HOMEWORLD</button>
+
+</div>

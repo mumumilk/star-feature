@@ -1,0 +1,30 @@
+<mat-sidenav #sidenavRight align="end" mode="side" [style.width.%]="appComponent.isMobile ? '100' : '40'" class="sidenav-right mat-elevation-z5">
+    <router-outlet></router-outlet>
+</mat-sidenav>
+<div class="page-container background-img">
+    <mat-progress-bar *ngIf="isLoading" [style.position]="'absolute'" mode="indeterminate" color="accent"></mat-progress-bar>
+    <div class="card-container">
+        <mat-card style="overflow-y: scroll" [style.width.%]="appComponent.isMobile ? '100' : '40'">
+            <mat-tab-group>
+                <mat-tab label="characters" style="max-height: 100vh">
+                    <ng-template mat-tab-label class="white">
+                        <span class="white"><mat-icon>contacts</mat-icon> &nbsp; CHARACTERS</span>
+                    </ng-template>
+
+                    <mat-nav-list>
+                        <mat-list-item *ngFor="let c of characters" class="white" (click)="characterDetails(c.url)">{{c.name}}</mat-list-item>
+                    </mat-nav-list>
+
+                </mat-tab>
+                <mat-tab label="planets">
+                    <ng-template mat-tab-label>
+                        <span class="white"><mat-icon>public</mat-icon> &nbsp; PLANETS</span>
+                    </ng-template>
+                    <mat-nav-list>
+                        <mat-list-item *ngFor="let p of planets" class="white" (click)="planetDetails(p.url)">{{p.name}}</mat-list-item>
+                    </mat-nav-list>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card>
+    </div>
+</div>
